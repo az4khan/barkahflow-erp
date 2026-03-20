@@ -1,0 +1,51 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #1a1f2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.loading-logo {
+  font-size: 40px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.loading-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 1px;
+}
+.loading-spinner {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.loading-spinner span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f97316;
+  animation: bounce 0.8s ease-in-out infinite;
+}
+.loading-spinner span:nth-child(2) { animation-delay: 0.15s; }
+.loading-spinner span:nth-child(3) { animation-delay: 0.3s; }
+.loading-msg {
+  font-size: 13px;
+  color: #64748b;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: .6; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}

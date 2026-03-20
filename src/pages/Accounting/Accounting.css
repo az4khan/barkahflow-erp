@@ -1,0 +1,146 @@
+/* ─── Accounting Module CSS — Teal accent overrides ─────────────────────────
+   Reuses from globals.css: .app-layout, .sidebar, .nav-item, .main-content,
+   .page-scroll, .stat-card, .modal-overlay, .modal-box, .modal-header, etc.
+   Only defines what is NEW for accounting (teal colour + accounting patterns).
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Sidebar teal overrides ─────────────────────────────────────────────────── */
+.ac-logo-icon  { width:32px; height:32px; background:#0d9488; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ac-user-chip  { display:flex; align-items:center; gap:8px; margin:10px 10px 6px; background:rgba(13,148,136,0.15); border-radius:8px; padding:8px 12px; }
+.ac-nav-active { background:#0d9488 !important; color:#fff !important; }
+
+/* ── Page layout ──────────────────────────────────────────────────────────────── */
+.ac-page         { padding:24px 28px; max-width:1280px; }
+.ac-page-header  { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px; gap:16px; }
+.ac-page-title   { font-size:20px; font-weight:700; color:#0f172a; letter-spacing:-0.025em; margin:0; }
+.ac-page-sub     { font-size:12.5px; color:#94a3b8; margin:2px 0 0; }
+.ac-page-actions { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+
+/* ── Buttons — teal primary ───────────────────────────────────────────────────── */
+.ac-btn           { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; font-size:12.5px; font-weight:600; cursor:pointer; border:none; transition:0.15s; white-space:nowrap; }
+.ac-btn:disabled  { opacity:0.45; cursor:not-allowed; }
+.ac-btn-sm        { padding:4px 10px; font-size:11.5px; }
+.ac-btn-primary         { background:#0d9488; color:#fff; }
+.ac-btn-primary:hover   { background:#0f766e; transform:translateY(-1px); box-shadow:rgba(13,148,136,0.3) 0 4px 12px; }
+.ac-btn-outline         { background:#fff; color:#374151; border:1px solid #e5e7eb !important; }
+.ac-btn-outline:hover   { background:#f9fafb; }
+.ac-btn-ghost           { background:transparent; color:#6b7280; border:1px solid #e5e7eb !important; }
+.ac-btn-ghost:hover     { background:#f9fafb; }
+.ac-btn-danger          { background:#ef4444; color:#fff; }
+.ac-btn-danger:hover    { background:#dc2626; }
+.ac-btn-success         { background:#10b981; color:#fff; }
+.ac-btn-success:hover   { background:#059669; }
+
+/* ── Tab bar ──────────────────────────────────────────────────────────────────── */
+.ac-tab-bar    { display:flex; border-bottom:1.5px solid #f1f5f9; margin-bottom:20px; }
+.ac-tab        { padding:9px 16px; font-size:13px; font-weight:500; color:#6b7280; border:none; background:transparent; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1.5px; transition:color 0.15s, border-color 0.15s; }
+.ac-tab:hover  { color:#0d9488; }
+.ac-tab.active { color:#0d9488; font-weight:600; border-bottom-color:#0d9488; }
+
+/* ── Stat grid wrapper (cards use shared .stat-card from globals) ─────────────── */
+.ac-stat-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); gap:14px; margin-bottom:20px; }
+
+/* ── Filter pills ─────────────────────────────────────────────────────────────── */
+.ac-filter-bar         { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+.ac-filter-pill        { padding:5px 14px; border-radius:20px; border:1px solid #e5e7eb; background:#fff; color:#6b7280; font-size:12px; font-weight:500; cursor:pointer; transition:all 0.12s; }
+.ac-filter-pill:hover  { background:#f9fafb; border-color:#d1d5db; }
+.ac-filter-pill.active { background:#0d9488; color:#fff; border-color:#0d9488; font-weight:600; }
+
+/* ── Table ────────────────────────────────────────────────────────────────────── */
+.ac-table-wrap        { background:#fff; border:1px solid #f1f5f9; border-radius:12px; overflow:hidden; }
+.ac-table-header      { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1px solid #f8fafc; gap:12px; }
+.ac-table-title       { font-size:13px; font-weight:600; color:#374151; }
+table.ac-table        { width:100%; border-collapse:collapse; }
+table.ac-table th     { padding:9px 16px; font-size:11px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:0.05em; background:#f8fafc; text-align:left; border-bottom:1px solid #f1f5f9; white-space:nowrap; }
+table.ac-table th.right { text-align:right; }
+table.ac-table td     { padding:11px 16px; font-size:13px; color:#374151; border-bottom:1px solid #f8fafc; white-space:nowrap; }
+table.ac-table tr:last-child td { border-bottom:none; }
+table.ac-table tr:hover td      { background:#fafafa; }
+table.ac-table td.right   { text-align:right; }
+table.ac-table td.bold    { font-weight:600; color:#111827; }
+table.ac-table td.muted   { color:#9ca3af; }
+table.ac-table td.primary { color:#0d9488; font-weight:600; font-family:monospace; }
+table.ac-table td.total   { font-weight:700; color:#0f172a; background:#f8fafc; border-top:2px solid #e2e8f0; }
+
+/* ── Badges ───────────────────────────────────────────────────────────────────── */
+.ac-badge        { display:inline-block; padding:2px 8px; border-radius:6px; font-size:11.5px; font-weight:600; }
+.ac-badge-green  { background:#f0fdf4; color:#16a34a; }
+.ac-badge-red    { background:#fef2f2; color:#dc2626; }
+.ac-badge-blue   { background:#eff6ff; color:#2563eb; }
+.ac-badge-orange { background:#fffbeb; color:#d97706; }
+.ac-badge-gray   { background:#f3f4f6; color:#6b7280; }
+.ac-badge-teal   { background:#f0fdfa; color:#0d9488; }
+.ac-badge-purple { background:#faf5ff; color:#7c3aed; }
+
+/* ── Generic card / layout ────────────────────────────────────────────────────── */
+.ac-card       { background:#fff; border:1px solid #f0f0f0; border-radius:12px; padding:18px 20px; }
+.ac-card-title { font-size:13px; font-weight:700; color:#0f172a; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9; }
+.ac-two-col    { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.ac-cards-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px; }
+
+/* ── Modal — teal focus (adds to existing modal-overlay/modal-box in globals) ─── */
+.ac-modal-overlay { position:fixed; inset:0; background:rgba(17,24,39,0.5); display:flex; align-items:center; justify-content:center; z-index:1000; padding:20px; backdrop-filter:blur(3px); animation:acFadeIn 0.15s; }
+.ac-modal         { background:#fff; border-radius:16px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:rgba(0,0,0,0.2) 0 24px 60px; animation:acModalIn 0.2s cubic-bezier(0.34,1.56,0.64,1); }
+.ac-modal-sm  { max-width:440px; } .ac-modal-md { max-width:600px; } .ac-modal-lg { max-width:800px; } .ac-modal-xl { max-width:1000px; }
+.ac-modal-hd     { display:flex; justify-content:space-between; align-items:center; padding:20px 24px 16px; border-bottom:1px solid #f3f4f6; position:sticky; top:0; background:#fff; z-index:1; }
+.ac-modal-title  { font-size:16px; font-weight:800; color:#111827; }
+.ac-modal-close  { width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center; background:transparent; border:none; cursor:pointer; color:#6b7280; font-size:18px; }
+.ac-modal-close:hover { background:#f3f4f6; }
+.ac-modal-body   { padding:20px 24px; }
+.ac-modal-footer { display:flex; justify-content:flex-end; gap:8px; padding:14px 24px 20px; border-top:1px solid #f3f4f6; }
+
+/* ── Forms ────────────────────────────────────────────────────────────────────── */
+.ac-form-grid   { display:grid; gap:14px; }
+.ac-form-grid-2 { grid-template-columns:1fr 1fr; }
+.ac-form-grid-3 { grid-template-columns:1fr 1fr 1fr; }
+.ac-form-full   { grid-column:1/-1; }
+.ac-form-group  { display:flex; flex-direction:column; gap:5px; }
+.ac-form-group label { font-size:12.5px; font-weight:600; color:#374151; }
+.ac-form-group input,
+.ac-form-group select,
+.ac-form-group textarea { border:1.5px solid #e5e7eb; border-radius:8px; padding:9px 13px; font-size:13.5px; color:#111827; background:#fff; transition:border-color 0.15s; outline:none; font-family:inherit; }
+.ac-form-group input:focus,
+.ac-form-group select:focus,
+.ac-form-group textarea:focus { border-color:#0d9488; box-shadow:0 0 0 3px rgba(13,148,136,0.1); }
+.ac-form-group textarea          { resize:vertical; min-height:80px; }
+.ac-form-group input[type=number]{ text-align:right; }
+.ac-form-group input:disabled    { background:#f9fafb; color:#9ca3af; cursor:not-allowed; }
+
+/* ── Journal entry lines ──────────────────────────────────────────────────────── */
+.ac-je-lines { border:1px solid #e5e7eb; border-radius:8px; overflow:hidden; margin-bottom:8px; }
+.ac-je-hd    { display:grid; grid-template-columns:2fr 1fr 1fr 28px; background:#f8fafc; padding:8px 12px; font-size:11px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:0.05em; }
+.ac-je-row   { display:grid; grid-template-columns:2fr 1fr 1fr 28px; gap:8px; padding:8px 12px; border-top:1px solid #f1f5f9; align-items:center; }
+.ac-je-row input,.ac-je-row select { border:1.5px solid #e5e7eb; border-radius:6px; padding:6px 10px; font-size:13px; color:#111827; background:#fff; outline:none; width:100%; }
+.ac-je-row input:focus,.ac-je-row select:focus { border-color:#0d9488; }
+.ac-je-totals { display:flex; justify-content:flex-end; gap:24px; padding:10px 14px; background:#f8fafc; border:1px solid #e5e7eb; border-top:none; border-radius:0 0 8px 8px; font-size:13px; }
+.ac-bal-ok { color:#16a34a; font-weight:700; }
+.ac-bal-bad{ color:#dc2626; font-weight:700; }
+
+/* ── Progress bar ─────────────────────────────────────────────────────────────── */
+.ac-track { background:#f1f5f9; border-radius:4px; height:7px; overflow:hidden; }
+.ac-fill  { height:100%; border-radius:4px; transition:width 0.4s ease; }
+
+/* ── Report rows ──────────────────────────────────────────────────────────────── */
+.ac-report-section-title { font-size:12px; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.06em; padding:8px 16px; background:#f0fdfa; border-left:4px solid #0d9488; }
+.ac-report-row           { display:flex; justify-content:space-between; align-items:center; padding:9px 16px; border-bottom:1px solid #f8fafc; font-size:13px; color:#374151; }
+.ac-report-row:hover     { background:#fafafa; }
+.ac-report-row.total     { font-weight:700; color:#111827; background:#f8fafc; border-top:2px solid #e2e8f0; border-bottom:2px solid #e2e8f0; }
+.ac-report-row.net       { font-weight:800; font-size:15px; color:#0f172a; border-top:2px solid #0d9488; padding:14px 16px; }
+.ac-amt     { font-weight:600; font-variant-numeric:tabular-nums; }
+.ac-amt.pos { color:#16a34a; }
+.ac-amt.neg { color:#dc2626; }
+
+/* ── Cost center card ─────────────────────────────────────────────────────────── */
+.ac-cc-card       { background:#fff; border:1px solid #f0f0f0; border-radius:12px; padding:16px 18px; transition:box-shadow 0.15s; }
+.ac-cc-card:hover { box-shadow:rgba(0,0,0,0.06) 0 4px 12px; }
+.ac-cc-name { font-size:14px; font-weight:700; color:#111827; }
+.ac-cc-id   { font-size:11.5px; color:#9ca3af; margin-top:1px; }
+.ac-cc-meta { display:flex; justify-content:space-between; font-size:12px; color:#6b7280; margin:10px 0 6px; }
+
+/* ── Misc helpers ─────────────────────────────────────────────────────────────── */
+.ac-rec-btn  { padding:3px 10px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid; transition:0.12s; }
+.ac-info-row  { display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:#374151; margin-bottom:12px; }
+.ac-info-row span { color:#94a3b8; margin-right:4px; }
+
+@keyframes acFadeIn  { from{opacity:0}   to{opacity:1} }
+@keyframes acModalIn { from{opacity:0;transform:scale(0.92) translateY(8px)} to{opacity:1;transform:none} }

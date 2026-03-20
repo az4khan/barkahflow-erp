@@ -1,0 +1,186 @@
+.cs-layout {
+  min-height: 100vh;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-body {
+  flex: 1;
+  padding: 28px 32px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Settings Sections ── */
+.settings-section {
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.settings-section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.settings-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.settings-section-sub {
+  font-size: 12.5px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ── Toggle Switch ── */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f9fafb;
+  gap: 16px;
+}
+
+.toggle-row:last-child {
+  border-bottom: none;
+}
+
+.toggle-info { flex: 1; }
+
+.toggle-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.toggle-desc {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: #e5e7eb;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+}
+
+.toggle-switch.toggle-on {
+  background: #8b5cf6;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.toggle-on .toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* For blue toggle in User Management */
+.toggle-switch.toggle-on.blue { background: #3b82f6; }
+
+/* ── Financial year preview ── */
+.fy-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #92400e;
+}
+
+/* ── Password strength ── */
+.pwd-strength-preview {
+  padding: 14px;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+}
+
+/* ── Save bar (floating) ── */
+.save-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #92400e;
+  gap: 16px;
+}
+
+.save-bar > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Field hint ── */
+.field-hint {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin-top: 5px;
+}
+
+/* ── Form grid variants ── */
+.form-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.form-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+  .form-grid.three-col { grid-template-columns: repeat(2, 1fr); }
+  .cs-body { padding: 16px; }
+}
+
+@media (max-width: 600px) {
+  .form-grid.three-col,
+  .form-grid.two-col { grid-template-columns: 1fr; }
+}
